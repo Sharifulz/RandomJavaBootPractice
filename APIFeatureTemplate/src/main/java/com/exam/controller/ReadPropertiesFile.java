@@ -1,6 +1,8 @@
 package com.exam.controller;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,9 +15,13 @@ public class ReadPropertiesFile {
 	@Value("${application.desc}")
 	String appDesc;
 	
+	String name="";
+	String email="";
+	
 	@GetMapping("/props")
-	public String readProperties() {
-		return appName+" "+ appOwner+" "+ appDesc;
+	public ResponseEntity<String> readProperties() {
+		String returnString = appName+" "+ appOwner+" "+ appDesc + "---"+ name+ "---" +email;
+		return new ResponseEntity<>(returnString,HttpStatus.PRECONDITION_FAILED);
 	}
 	
 	
