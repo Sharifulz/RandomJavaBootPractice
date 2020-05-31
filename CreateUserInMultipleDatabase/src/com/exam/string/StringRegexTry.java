@@ -36,7 +36,6 @@ public class StringRegexTry {
 		
 		
 		String regex = "\\d{10}";
-		
 		String phone= "1969037346";
 		
 		if (phone.matches("\\d{10}")) {
@@ -44,10 +43,6 @@ public class StringRegexTry {
 		}else {
 			System.out.println("Phone Number invalid");
 		}
-		
-		
-		
-		
 	}  
 
 	
