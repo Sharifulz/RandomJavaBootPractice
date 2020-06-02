@@ -6,7 +6,6 @@ public class PasswordService implements IPasswordService {
 	public boolean matchPassword(String password) {
 		String pwd = "abc123!@#A";
 		String hashedPwd ="";
-		 new BCryp
 		return false;
 	}
 
