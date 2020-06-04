@@ -10,20 +10,19 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.exam.service.IPasswordService;
 import com.exam.service.ProcessEmail;
 
 @RestController
-public class PasswordValidationController {
-	
+public class SendEmailController {
+
 	@Autowired
-	IPasswordService passwordService;
+	ProcessEmail emailService;
 	
-	@GetMapping("/randomPass")
-	public ResponseEntity<Map<String, Object>> generateRandomPass(){
+	@GetMapping("/email/{email}")
+	public ResponseEntity<Map<String, Object>> checkEmail(@PathVariable("email") String email){
 		Map<String, Object> data = new HashMap<String, Object>();
 		ResponseEntity<Map<String,Object>> responseEntity = null;
-		data = passwordService.generateRandomPass();
+		data = emailService.sendEmailTo(email);
 		
 		if (data.get("responseCode").equals("404")) {
 			responseEntity = new ResponseEntity<Map<String,Object>>(data, HttpStatus.NOT_FOUND);
