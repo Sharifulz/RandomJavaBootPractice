@@ -8,10 +8,12 @@ public class MapPractice {
 	public static void main(String[] args) {
 		Map<String, Object> data = new HashMap<String, Object>();
 		
-		data.put("name",	"Selim");
-		data.put("name",	"Amina");
-		
-		System.out.println(data.get("name"));
+		data.put("fname",	"Selim");
+		data.put("lname",	"Khan");
+		data.put("alive",	false);
+		if (data.get("alive").equals(true)) {
+			System.out.println(data.get("fname"));
+		}
 	}
 
 }
