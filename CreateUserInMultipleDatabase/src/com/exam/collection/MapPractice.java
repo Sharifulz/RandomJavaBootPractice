@@ -12,8 +12,19 @@ public class MapPractice {
 		data.put("lname",	"Khan");
 		data.put("alive",	false);
 		if (data.get("alive").equals(true)) {
-			System.out.println(data.get("fname"));
+			//System.out.println(data.get("fname"));
 		}
+		
+		String a[] = new String[] { "A", "B", "C", "D" }; 
+		
+		for (int i = 0; i < a.length; i++) {
+			if (a[i].equals("C")) {
+				System.out.println("C found");
+				return;
+			}
+			System.out.println(a[i]);
+		}
+		
 	}
 
 }
