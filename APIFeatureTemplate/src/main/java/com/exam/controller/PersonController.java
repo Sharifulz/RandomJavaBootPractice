@@ -21,6 +21,17 @@ public class PersonController {
 		return personService.getAllPersons().subList(1, 2);
 	}
 	
+	@PostMapping("/personArr")
+	public String getPersonArray(@RequestBody Person person){
+		
+		
+		for (int i = 0; i < person.getStrArray().length; i++) {
+			System.out.println(person.getStrArray()[i]);
+		}
+		
+		return "Person Found";
+	}
+	
 	//http://localhost:9099/persons
 	@PostMapping("/persons")
 	public List<Person> getPersons(@RequestBody List<Person> persons){

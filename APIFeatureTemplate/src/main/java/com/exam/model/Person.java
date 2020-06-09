@@ -7,6 +7,9 @@ public class Person {
 	int age;
 	String fathersName;
 	String mothersName;
+	
+	String[] strArray;
+	
 	public int getId() {
 		return id;
 	}
@@ -36,6 +39,12 @@ public class Person {
 	}
 	public void setMothersName(String mothersName) {
 		this.mothersName = mothersName;
+	}
+	public String[] getStrArray() {
+		return strArray;
+	}
+	public void setStrArray(String[] strArray) {
+		this.strArray = strArray;
 	}
 	public Person(int id, String name, int age, String fathersName, String mothersName) {
 		this.id = id;
