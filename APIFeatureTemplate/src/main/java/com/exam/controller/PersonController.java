@@ -22,14 +22,17 @@ public class PersonController {
 	}
 	
 	@PostMapping("/personArr")
-	public String getPersonArray(@RequestBody Person person){
+	public Person getPersonArray(@RequestBody Person person){
 		
-		
+		/*
 		for (int i = 0; i < person.getStrArray().length; i++) {
 			System.out.println(person.getStrArray()[i]);
 		}
-		
-		return "Person Found";
+		*/
+		System.out.println(person.getAge());
+		System.out.println(person.getName());
+		System.out.println(person.getSalary());
+		return person;
 	}
 	
 	//http://localhost:9099/persons

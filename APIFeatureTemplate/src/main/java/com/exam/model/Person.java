@@ -7,6 +7,7 @@ public class Person {
 	int age;
 	String fathersName;
 	String mothersName;
+	double salary;
 	
 	String[] strArray;
 	
@@ -46,12 +47,21 @@ public class Person {
 	public void setStrArray(String[] strArray) {
 		this.strArray = strArray;
 	}
-	public Person(int id, String name, int age, String fathersName, String mothersName) {
+	
+	public double getSalary() {
+		return salary;
+	}
+	public void setSalary(double salary) {
+		this.salary = salary;
+	}
+	
+	public Person(int id, String name, int age, String fathersName, String mothersName, double salary) {
 		this.id = id;
 		this.name = name;
 		this.age = age;
 		this.fathersName = fathersName;
 		this.mothersName = mothersName;
+		this.salary = salary;
 	}
 	public Person() {}
 	
