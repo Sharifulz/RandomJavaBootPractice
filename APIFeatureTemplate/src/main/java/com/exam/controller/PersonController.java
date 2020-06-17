@@ -1,6 +1,7 @@
 package com.exam.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -34,6 +35,18 @@ public class PersonController {
 		System.out.println(person.getSalary());
 		return person;
 	}
+	
+	@PostMapping("/map")
+	public String getMap(@RequestBody Map<String, Object> requestMap){
+		
+		requestMap.entrySet().stream().sorted(Map.Entry.comparingByKey()).forEachOrdered((map -> {
+			System.out.println("Key ---------> "+ map.getKey() + " ----- Value -----------> "+ map.getValue().toString());
+		}));
+		
+		return "Map printed";
+
+	}
+	
 	
 	//http://localhost:9099/persons
 	@PostMapping("/persons")

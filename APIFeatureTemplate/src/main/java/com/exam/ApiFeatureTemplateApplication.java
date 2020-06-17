@@ -1,5 +1,7 @@
 package com.exam;
 
+import java.io.File;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 /*
@@ -7,6 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 
+import com.exam.filehandler.FileController;
 import com.exam.filehandler.FileStorageProperties;
 
 @SpringBootApplication
@@ -14,7 +17,8 @@ import com.exam.filehandler.FileStorageProperties;
 public class ApiFeatureTemplateApplication {
 //------------- Application start from here
 	public static void main(String[] args) {
+		new File(FileController.uploadDirectory).mkdir();
 		SpringApplication.run(ApiFeatureTemplateApplication.class, args);
-	}
+	} 
 
 }
