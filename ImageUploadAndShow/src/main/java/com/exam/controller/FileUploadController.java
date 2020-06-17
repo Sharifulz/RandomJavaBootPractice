@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -13,25 +15,29 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.exam.model.UploadFileResponse;
+
 @RestController
 @RequestMapping("/file")
 public class FileUploadController {
 private static String UPLOAD_DIR ="uploads";
 	
 	@RequestMapping(value = "/upload" , method = RequestMethod.POST)
-	public String upload(@RequestParam("file") MultipartFile file, @RequestParam("name") String fileName, HttpServletRequest request) {
+	public UploadFileResponse upload(@RequestParam("file") MultipartFile file, @RequestParam("name") String fileName, HttpServletRequest request) {
 		
 		System.out.println("------------------------- > "+ fileName);
-		
+		UploadFileResponse res =  null;
 		try {
 			//String filename = "name1.jpg";
 			//String filename = file.getOriginalFilename();
 			String path = request.getServletContext().getRealPath("")+UPLOAD_DIR+ File.separator+fileName;
 			saveFile(file.getInputStream(), path);
-			return fileName;
+			res = new UploadFileResponse(fileName, "http://192.168.100.54:9098/uploads/eq.jpg", "PNG", 100);
+			//printIpInfo();
+			return res;
 		} catch (Exception e) {
 			e.printStackTrace();
-			return e.getMessage();
+			return null;
 		}
 	}
 	
@@ -49,4 +55,5 @@ private static String UPLOAD_DIR ="uploads";
 			e.printStackTrace();
 		}
 	}
+
 }
