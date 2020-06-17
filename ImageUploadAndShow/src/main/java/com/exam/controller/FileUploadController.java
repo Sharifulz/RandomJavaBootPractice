@@ -19,12 +19,16 @@ public class FileUploadController {
 private static String UPLOAD_DIR ="uploads";
 	
 	@RequestMapping(value = "/upload" , method = RequestMethod.POST)
-	public String upload(@RequestParam("file") MultipartFile file, HttpServletRequest request) {
+	public String upload(@RequestParam("file") MultipartFile file, @RequestParam("name") String fileName, HttpServletRequest request) {
+		
+		System.out.println("------------------------- > "+ fileName);
+		
 		try {
-			String filename = "name1.jpg";
-			String path = request.getServletContext().getRealPath("")+UPLOAD_DIR+ File.separator+filename;
+			//String filename = "name1.jpg";
+			//String filename = file.getOriginalFilename();
+			String path = request.getServletContext().getRealPath("")+UPLOAD_DIR+ File.separator+fileName;
 			saveFile(file.getInputStream(), path);
-			return filename;
+			return fileName;
 		} catch (Exception e) {
 			e.printStackTrace();
 			return e.getMessage();
