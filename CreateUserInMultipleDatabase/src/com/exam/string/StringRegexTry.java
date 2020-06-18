@@ -8,7 +8,7 @@ public class StringRegexTry {
 	private static final String PASSWORD_REGEX = "((?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^a-z0-9 ]).{6,20})";
 	private static final String EMAIL_PATTERN_REGEX = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
 	public static void main(String[] args) {
-	
+	/*
 		Pattern passpattern = Pattern.compile("[^a-z0-9 ]", Pattern.CASE_INSENSITIVE);
 		Matcher passmatcher = passpattern.matcher("Iama!string");
 		boolean b = passmatcher.find();
@@ -43,7 +43,12 @@ public class StringRegexTry {
 		}else {
 			System.out.println("Phone Number invalid");
 		}
+		*/
 		
+		String comp = "CTrends";
+		String sub1 = comp.substring(1, 6);
+		String sub2 = comp.substring(1, comp.length());// java substring is excluding
+		System.out.println(sub2);
 		
 		//------------- Generate auto password
 		
