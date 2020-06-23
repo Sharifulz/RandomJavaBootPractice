@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+<body>
+
+<h2>JavaScript Functions</h2>
+
+<p>This example calls a function which performs a calculation and returns the result:</p>
+
+<p id="demo"></p>
+
+<script>
+
+	let myMap = new Map();
+
+
+/*var selectValues = { "1": "test 1", "2": "test 2" };
+
+console.log(selectValues);*/
+
+let abc = [{"id" : 1, "name": "John"},{"id" : 2, "name": "Karim"}];
+var obj = {};
+
+for (var i = 0; i < abc.length;i++) {
+	obj[""+abc[i].id] = abc[i].name;
+}
+
+console.log(obj);
+</script>
+
+</body>
+</html>
