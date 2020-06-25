@@ -44,7 +44,7 @@ public class AutogenerateStringWithPattern {
 		
 		String msg = unions.substring(0, unions.length()-2);
 		System.out.println(unions.length());
-		System.out.println(unions);
+		System.out.println(msg);
 		//System.out.println(msg);
 		
 		
