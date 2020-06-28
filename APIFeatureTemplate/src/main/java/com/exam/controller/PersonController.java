@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.exam.model.InvoiceModel;
 import com.exam.model.Person;
 import com.exam.service.PersonsService;
 
@@ -23,16 +24,16 @@ public class PersonController {
 	}
 	
 	@PostMapping("/personArr")
-	public Person getPersonArray(@RequestBody Person person){
+	public Person getPersonArray(@RequestBody Person person, InvoiceModel invoice){
 		
 		/*
 		for (int i = 0; i < person.getStrArray().length; i++) {
 			System.out.println(person.getStrArray()[i]);
 		}
 		*/
-		System.out.println(person.getAge());
 		System.out.println(person.getName());
-		System.out.println(person.getSalary());
+		System.out.println("---------------------------------");
+		//System.out.println(invoice.getInvoicenumber());
 		return person;
 	}
 	
