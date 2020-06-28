@@ -39,15 +39,38 @@ public class AutogenerateStringWithPattern {
 		projectList.add(p5);
 		
 		for (Project project : projectList) {
-			unions +=project.getProjectCode() +", ";
+			//unions +=project.getProjectCode() +", ";
 		}
 		
-		String msg = unions.substring(0, unions.length()-2);
-		System.out.println(unions.length());
-		System.out.println(msg);
+		//String msg = unions.substring(0, unions.length()-2);
+		//System.out.println(unions.length());
+		//System.out.println(msg);
 		//System.out.println(msg);
 		
-		
+		String str = "BDADHTH00311";
+		//String lastFOur = str.substring(str.length()-4);
+		int inDecimal = Integer.parseInt(str.substring(str.length()-4), 10)+1;
+		//int finalNumer = inDecimal+1;
+		String str2 = String.format("%04d", inDecimal);
+		System.out.println(str2);
+		/*
+		long lst = 00172;
+		System.out.println(lst);
+		 
+		System.out.println(Integer.parseInt(str,10));
+		*/
+		/*
+		int actualDigitsLength = String.valueOf(lst).length();
+		System.out.println("Nunber is "+ lst + " ----- Digit Length : "+ actualDigitsLength);
+		if (actualDigitsLength<5) {
+			String addZero = "";
+			for (int i = 0; i < 4-actualDigitsLength; i++) {
+				System.out.println("loop");
+				addZero+="0";
+			}
+			//System.out.println(addZero+String.valueOf(lst4+1));
+		}
+		*/
 		
 		
 	}  
