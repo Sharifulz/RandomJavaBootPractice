@@ -72,6 +72,12 @@ public class AutogenerateStringWithPattern {
 		}
 		*/
 		
+		String abc = "Hey there";
+		
+		String[] abcd = abc.split(" ");
+		
+		System.out.println(abc);
+		
 		
 	}  
 }
