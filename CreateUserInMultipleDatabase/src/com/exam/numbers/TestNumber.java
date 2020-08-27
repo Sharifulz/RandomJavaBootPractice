@@ -2,9 +2,13 @@ package com.exam.numbers;
 
 public class TestNumber {
 
+	public static void speak() {
+		System.out.println("Speaking ---- ... ---");
+	}
+	
 	public static void main(String[] args) {
 		
-		byte byt = -128;
+		byte byt = -128; // binary -128 =  10000000 128 = 10000000 127 = 1111111
 		System.out.println(byt);
 		int a = 20;
 		int b = 100;
@@ -18,6 +22,8 @@ public class TestNumber {
 		System.out.println(a);
 		
 		System.out.println(x = 1);
+		speak();
+		
 
 	}
 
