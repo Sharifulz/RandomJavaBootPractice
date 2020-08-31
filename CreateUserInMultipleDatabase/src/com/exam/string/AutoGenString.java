@@ -1,47 +1,29 @@
-package com.exam.controller;
+package com.exam.string;
 
 import java.security.SecureRandom;
 import java.util.Random;
 
-import org.apache.commons.lang3.RandomStringUtils;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
-@Controller
-public class HomeController {
-	
+public class AutoGenString {
+	private static final Random generator = new Random();
 	static final String SOURCE = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ" + "abcdefghijklmnopqrstuvwxyz"; 
 	static SecureRandom secureRnd = new SecureRandom();
-	
-	@GetMapping("/")
-	public String home() {
-		//return "<h1 style='color:blue; text-align:center;'>Welcome from CTrends <span style='color:red'>GIS</span> App </h1>";
-		return "index.html";
-	}
-	
-	@GetMapping("/ok")
-	public String okStart() {
-		
+	public static void main(String[] args) { 
 		System.out.println("5 random alphanumeric string with length 10"); 
-		for (int i = 0; i < 1; i++) {
+		for (int i = 0; i < 5; i++) {
 			String alpha = randomString(10);
 			System.out.println(alpha);
 		} 
 		System.out.println("5 random alphanumeric string with length 12");
-		for (int i = 0; i < 1; i++) {
+		for (int i = 0; i < 5; i++) {
 			String beta = randomString(10); 
 			System.out.println(beta);
 		} 
 		System.out.println("5 random alphanumeric string with length 20" + " generated using Apache Commons lang"); 
-		for (int i = 0; i < 1; i++) { 
-			String random = RandomStringUtils.randomAlphanumeric(20).toUpperCase(); 
-			System.out.println(random); 
-			}
-		return "";
-	}
-	
+		for (int i = 0; i < 5; i++) { 
+			//String random = RandomStringUtils.randomAlphanumeric(20).toUpperCase(); 
+			System.out.println(""); 
+			} 
+		} 
 	public static String randomString(int length) {
 		StringBuilder sb = new StringBuilder(length);
 		for (int i = 0; i < length; i++)
@@ -49,5 +31,4 @@ public class HomeController {
 		return sb.toString(); 
 		}
 
-	
 }
