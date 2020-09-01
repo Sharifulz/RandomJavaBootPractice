@@ -1,7 +1,12 @@
 package com.exam.util;
 
+import java.sql.Date;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 public class DateTimeString {
 
@@ -21,5 +26,18 @@ public class DateTimeString {
 		 String formattedTime = myDateObj.format(time);
 		return formattedTime;
 	}  
+	
+	public static Map<String, Object> getCurrentTimeAndExpiredTime(){
+		
+		Map<String, Object> map = new HashMap<>();
+		
+		Date expiredTime = new Date(System.currentTimeMillis() + TimeUnit.MINUTES.toMillis(5));
+		
+		map.put("expiredDate", expiredTime);
+		
+		return map;
+		
+		
+	}
 	
 }
