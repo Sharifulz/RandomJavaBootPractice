@@ -1,10 +1,10 @@
 package com.exam.util;
 
 import java.sql.Date;
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
@@ -30,13 +30,19 @@ public class DateTimeString {
 	public static Map<String, Object> getCurrentTimeAndExpiredTime(){
 		
 		Map<String, Object> map = new HashMap<>();
+		Date currentDate = new Date(System.currentTimeMillis());
+		Timestamp currentTime = new Timestamp(System.currentTimeMillis());
 		
-		Date expiredTime = new Date(System.currentTimeMillis() + TimeUnit.MINUTES.toMillis(5));
+		Date expiredDate = new Date(System.currentTimeMillis() + TimeUnit.MINUTES.toMillis(5));
+		System.out.println("Expired Date -------> "+ expiredDate);
 		
-		map.put("expiredDate", expiredTime);
+		System.out.println("Expired Time before adding 5 minute -------> "+ currentTime);
+		currentTime.setTime(currentTime.getTime() + TimeUnit.MINUTES.toMillis(5));
+		System.out.println("Expired Time after adding 5 minute -------> "+ currentTime);
 		
+		map.put("expiredDate", expiredDate);
+		map.put("expiredTime", currentTime);
 		return map;
-		
 		
 	}
 	

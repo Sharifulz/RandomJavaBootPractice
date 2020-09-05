@@ -10,6 +10,11 @@ public class StringPool {
 		System.out.println(s1==s3);
 		System.out.println("Is s1.equals(s2)? "+ s1.equals(s2));
 		System.out.println("Is s1.equals(s3)? "+ s1.equals(s3));
+		
+		
+		String str = null;
+		System.out.println("Date 05 Sept 2020 ---------------------");
+		System.out.println(str==null);
 	}
 
 }

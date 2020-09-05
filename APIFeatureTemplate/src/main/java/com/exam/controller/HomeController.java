@@ -6,6 +6,8 @@ import java.util.Random;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,6 +19,13 @@ public class HomeController {
 	
 	@GetMapping("/")
 	public String home() {
+		//return "<h1 style='color:blue; text-align:center;'>Welcome from CTrends <span style='color:red'>GIS</span> App </h1>";
+		return "index.html";
+	}
+	
+	@PostMapping("/otp")
+	public String home(@RequestBody String otpValue) {
+		System.out.println("Otp received ---------- > "+ otpValue);
 		//return "<h1 style='color:blue; text-align:center;'>Welcome from CTrends <span style='color:red'>GIS</span> App </h1>";
 		return "index.html";
 	}
