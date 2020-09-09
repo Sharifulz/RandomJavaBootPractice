@@ -14,19 +14,29 @@ public class ThrowsException {
 	 */
 	public static void main(String[] args) {
 
-			method1("B", "B");
+			try {
+				method1(null, "B");
+			} catch (Exception e) {
+				System.out.println("Exception is : "+e.toString());
+				System.out.println("Exception msg : "+e.getLocalizedMessage());
+				System.out.println("Another msg : "+ e.getMessage());
+				System.out.println();
+				e.printStackTrace();
+			}
 		
 		System.out.println("Outiside main ------------------- ");
 	}
 	
-	public static void method1(String x, String b){
+	public static void method1(String x, String b) throws NullPointerException{
 	
+		
 			if (x.equals("A")) {
 				System.out.println("Method1 "+ x);
 			}	else {
 				System.out.println("Else ----------------------");
-				throw new NullPointerException();
 			}
+		
+			
 		
 		System.out.println("Outside print statement");
 	}
