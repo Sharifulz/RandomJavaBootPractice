@@ -19,9 +19,9 @@ public class TestNumber {
 		numb2 = 2.0;
 		numb1 = 0.9;
 		a = 30;
-		System.out.println(a);
+		System.out.println("average-------> " +avg);
 		
-		System.out.println(x = 1);
+		//System.out.println(x = 1);
 		speak();
 		
 

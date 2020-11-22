@@ -11,6 +11,17 @@ public class MapPractice {
 		data.put("fname",	"Selim");
 		data.put("lname",	"Khan");
 		data.put("alive",	false);
+		
+		
+		data.forEach((k,v)->{
+			System.out.println("[Key]-------->"+ k+" [Value]----------> "+ v);
+		});
+		System.out.println("-====================================");
+		data.remove("fname");
+		data.forEach((k,v)->{
+			System.out.println("[Key]-------->"+ k+" [Value]----------> "+ v);
+		});
+		
 		if (data.get("alive").equals(true)) {
 			//System.out.println(data.get("fname"));
 		}
@@ -19,10 +30,10 @@ public class MapPractice {
 		
 		for (int i = 0; i < a.length; i++) {
 			if (a[i].equals("C")) {
-				System.out.println("C found");
+				//System.out.println("C found");
 				return;
 			}
-			System.out.println(a[i]);
+			//System.out.println(a[i]);
 		}
 		
 	}
