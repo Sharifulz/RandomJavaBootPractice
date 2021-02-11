@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.exam.model.InvoiceModel;
+import com.exam.model.InvoiceModels;
 import com.exam.model.Person;
 import com.exam.service.PersonsService;
 
@@ -20,17 +20,25 @@ public class PersonController {
 	
 	@GetMapping("/person")
 	public List<Person> getPerson(){
+		InvoiceModels invoices = new InvoiceModels();
+		//invoices.setInvoiceNumber("2");
+		
+		
 		return personService.getAllPersons().subList(1, 2);
 	}
-	
+
+
 	@PostMapping("/personArr")
-	public Person getPersonArray(@RequestBody Person person, InvoiceModel invoice){
+	public Person getPersonArray(@RequestBody Person person, InvoiceModels invoice){
 		
 		/*
 		for (int i = 0; i < person.getStrArray().length; i++) {
 			System.out.println(person.getStrArray()[i]);
 		}
 		*/
+		
+		
+		
 		System.out.println(person.getName());
 		System.out.println("---------------------------------");
 		//System.out.println(invoice.getInvoicenumber());
